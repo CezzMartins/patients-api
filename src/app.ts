@@ -11,7 +11,7 @@ export class App {
     private readonly APPLICATION_RUNNING = "Application is running on: ";
     private readonly ROUTE_NOT_FOUN = "SERVICE IS NOT FOUND!";
 
-    constructor(private readonly port: (string | number) = process.env.SERVER_PORT || 3000){
+    constructor(private readonly port: (string | number) = process.env.SERVER_PORT || 5000){
         this.app = express(); //create server
         this.middleWare();
         this.routes();

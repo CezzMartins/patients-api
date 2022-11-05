@@ -6,5 +6,6 @@ export interface Patient {
     phone: string;
     address: string;
     diagnosis: string;
+    status: string;
     image_url: string;
 }

@@ -14,7 +14,7 @@ export const getPatients = async(request: Request, response: Response): Promise<
     try{
         const pool = await connection();
         const result: ResultSet = await pool.query(QUERY.SELECT_PATIENTS);
-        return response.status(Code.OK).send(new HttpResponse(Code.OK, Status.OK, "Patients retrieved.", result[1]));
+        return response.status(Code.OK).send(new HttpResponse(Code.OK, Status.OK, "Patients retrieved.", result[0]));
     } catch(error: unknown) {
         console.error(error);
         return response.status(Code.INTERNAL_SERVER_ERROR).send(new HttpResponse(Code.INTERNAL_SERVER_ERROR, Status.INTERNAL_SERVER_ERROR, "An error occurred."));
